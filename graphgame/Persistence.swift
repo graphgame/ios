@@ -23,6 +23,10 @@ struct Persistence {
 	
 	let container: NSPersistentContainer
 	
+	var context: NSManagedObjectContext {
+		container.viewContext
+	}
+	
 	init(inMemory: Bool = false) {
 		container = NSPersistentContainer(name: "graphgame")
 		
