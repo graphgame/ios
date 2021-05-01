@@ -6,13 +6,11 @@ struct graphgameApp: App {
 	
 	var body: some Scene {
 		WindowGroup {
-			NavigationView {
-				HomeView()
-					.environment(
-						\.managedObjectContext,
-						persistence.container.viewContext
-					)
-			}
+			HomeView()
+				.environment(
+					\.managedObjectContext,
+					persistence.container.viewContext
+				)
 		}
 	}
 }
