@@ -13,11 +13,9 @@ struct TotalStars: View {
 	}
 	
 	var body: some View {
-		Button {
-			Solution(context: context, level: levels[0], stars: 2)
-			context.saveIfChanged()
-		} label: {
-			Text("\(stars)")
+		HStack(spacing: 4) {
+			Text(stars.description)
+			Image(systemName: "star.circle.fill")
 		}
 	}
 }
