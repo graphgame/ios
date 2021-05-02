@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D421844263E805C00238AEC /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D421843263E805C00238AEC /* Solution.swift */; };
+		4D42184D263E810400238AEC /* NSManagedObjectContext+Save.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42184C263E810400238AEC /* NSManagedObjectContext+Save.swift */; };
 		4D576AAB263D301C00E4D982 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D576AAA263D301C00E4D982 /* App.swift */; };
 		4D576AAD263D301C00E4D982 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D576AAC263D301C00E4D982 /* HomeView.swift */; };
 		4D576AAF263D301D00E4D982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D576AAE263D301D00E4D982 /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D421843263E805C00238AEC /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
+		4D42184C263E810400238AEC /* NSManagedObjectContext+Save.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Save.swift"; sourceTree = "<group>"; };
 		4D45CA0B263D31E7005B553C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		4D576AA7263D301C00E4D982 /* graphgame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = graphgame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D576AAA263D301C00E4D982 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -90,6 +94,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D421842263E804F00238AEC /* Solution */ = {
+			isa = PBXGroup;
+			children = (
+				4D421843263E805C00238AEC /* Solution.swift */,
+			);
+			path = Solution;
+			sourceTree = "<group>";
+		};
+		4D42184B263E80F300238AEC /* NSManagedObjectContext */ = {
+			isa = PBXGroup;
+			children = (
+				4D42184C263E810400238AEC /* NSManagedObjectContext+Save.swift */,
+			);
+			path = NSManagedObjectContext;
+			sourceTree = "<group>";
+		};
 		4D576A9E263D301C00E4D982 = {
 			isa = PBXGroup;
 			children = (
@@ -175,7 +195,9 @@
 		4DBCA2DF263D3A960013B62B /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				4D42184B263E80F300238AEC /* NSManagedObjectContext */,
 				4DBCA2E0263D3AB10013B62B /* Level */,
+				4D421842263E804F00238AEC /* Solution */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -335,10 +357,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D42184D263E810400238AEC /* NSManagedObjectContext+Save.swift in Sources */,
 				4DBCA2EA263D3B140013B62B /* Levels.swift in Sources */,
 				4DBCA2F0263D3B750013B62B /* LevelGrid.swift in Sources */,
 				4D576AB4263D301D00E4D982 /* Persistence.swift in Sources */,
 				4D576AAD263D301C00E4D982 /* HomeView.swift in Sources */,
+				4D421844263E805C00238AEC /* Solution.swift in Sources */,
 				4DBCA30F263D41C70013B62B /* LevelView.swift in Sources */,
 				4D576AB7263D301D00E4D982 /* graphgame.xcdatamodeld in Sources */,
 				4DC6ED29263E415000614EC8 /* TotalStars.swift in Sources */,

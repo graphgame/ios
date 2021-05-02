@@ -6,10 +6,8 @@ struct LevelCell: View {
 	var body: some View {
 		NavigationLink(destination: LevelView(level: level)) {
 			ZStack {
-				Rectangle()
-					.foregroundColor(.white)
-					.cornerRadius(15)
-					.shadow(color: Color.black.opacity(0.15), radius: 3)
+				RoundedRectangle(cornerRadius: 15)
+					.stroke(Color("Border"))
 					.aspectRatio(contentMode: .fill)
 				Text("level \(level.id)")
 					.font(.system(size: 16, weight: .bold))
@@ -22,6 +20,7 @@ struct LevelCell: View {
 struct LevelCell_Previews: PreviewProvider {
 	static var previews: some View {
 		LevelCell(level: levels[0])
+			.frame(width: 120, height: 120)
 			.environment(\.managedObjectContext, Persistence.preview.context)
 	}
 }

@@ -2,15 +2,23 @@ import SwiftUI
 import CoreData
 
 struct TotalStars: View {
+	@Environment(\.managedObjectContext)
+	var context
+	
 	@FetchRequest<Solution>(sortDescriptors: [])
 	var solutions
 	
-	var stars: Int {
-		solutions.reduce(0) { $0 + Int($1.stars) }
+	var stars: Int16 {
+		solutions.reduce(0) { $0 + $1.stars }
 	}
 	
 	var body: some View {
-		Text("\(stars)")
+		Button {
+			Solution(context: context, level: levels[0], stars: 2)
+			context.saveIfChanged()
+		} label: {
+			Text("\(stars)")
+		}
 	}
 }
 
