@@ -2,12 +2,18 @@ import SwiftUI
 
 @main
 struct graphgameApp: App {
-	let persistence = Persistence.shared
+	private let persistence = Persistence.shared
+	
+	init() {
+		UINavigationBar.appearance().barTintColor = .white
+	}
 	
 	var body: some Scene {
 		WindowGroup {
-			HomeView()
-				.environment(\.managedObjectContext, persistence.context)
+			NavigationView {
+				HomeView()
+					.environment(\.managedObjectContext, persistence.context)
+			}
 		}
 	}
 }

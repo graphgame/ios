@@ -1,18 +1,18 @@
 import SwiftUI
 
+private let spacing: CGFloat = 16
+
+private let columns = [
+	GridItem(.adaptive(minimum: 120, maximum: 200), spacing: spacing)
+]
+
 struct LevelGrid: View {
-	static let spacing: CGFloat = 12
-	
-	static let columns = [
-		GridItem(.adaptive(minimum: 120, maximum: 200), spacing: spacing)
-	]
-	
 	var body: some View {
 		ScrollView(showsIndicators: false) {
-			LazyVGrid(columns: Self.columns, spacing: Self.spacing) {
+			LazyVGrid(columns: columns, spacing: spacing) {
 				ForEach(levels, content: LevelCell.init)
 			}
-			.padding(.horizontal, Self.spacing)
+			.padding(spacing)
 		}
 	}
 }

@@ -19,6 +19,8 @@
 		4DBCA2EA263D3B140013B62B /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBCA2E9263D3B140013B62B /* Levels.swift */; };
 		4DBCA2F0263D3B750013B62B /* LevelGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBCA2EF263D3B750013B62B /* LevelGrid.swift */; };
 		4DBCA301263D3DA20013B62B /* LevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBCA300263D3DA20013B62B /* LevelCell.swift */; };
+		4DBCA30F263D41C70013B62B /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBCA30E263D41C70013B62B /* LevelView.swift */; };
+		4DC6ED29263E415000614EC8 /* TotalStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC6ED28263E415000614EC8 /* TotalStars.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		4DBCA2E9263D3B140013B62B /* Levels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
 		4DBCA2EF263D3B750013B62B /* LevelGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelGrid.swift; sourceTree = "<group>"; };
 		4DBCA300263D3DA20013B62B /* LevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCell.swift; sourceTree = "<group>"; };
+		4DBCA30E263D41C70013B62B /* LevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelView.swift; sourceTree = "<group>"; };
+		4DC6ED28263E415000614EC8 /* TotalStars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalStars.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				4D576AAC263D301C00E4D982 /* HomeView.swift */,
+				4DBCA30E263D41C70013B62B /* LevelView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				4DBCA2EE263D3B3E0013B62B /* Level */,
+				4DC6ED27263E414000614EC8 /* Star */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -190,6 +196,14 @@
 				4DBCA300263D3DA20013B62B /* LevelCell.swift */,
 			);
 			path = Level;
+			sourceTree = "<group>";
+		};
+		4DC6ED27263E414000614EC8 /* Star */ = {
+			isa = PBXGroup;
+			children = (
+				4DC6ED28263E415000614EC8 /* TotalStars.swift */,
+			);
+			path = Star;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,7 +339,9 @@
 				4DBCA2F0263D3B750013B62B /* LevelGrid.swift in Sources */,
 				4D576AB4263D301D00E4D982 /* Persistence.swift in Sources */,
 				4D576AAD263D301C00E4D982 /* HomeView.swift in Sources */,
+				4DBCA30F263D41C70013B62B /* LevelView.swift in Sources */,
 				4D576AB7263D301D00E4D982 /* graphgame.xcdatamodeld in Sources */,
+				4DC6ED29263E415000614EC8 /* TotalStars.swift in Sources */,
 				4DBCA301263D3DA20013B62B /* LevelCell.swift in Sources */,
 				4DBCA2E2263D3ABB0013B62B /* Level.swift in Sources */,
 				4D576AAB263D301C00E4D982 /* App.swift in Sources */,

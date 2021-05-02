@@ -2,24 +2,7 @@ import CoreData
 
 struct Persistence {
 	static let shared = Persistence()
-	
-	static var preview: Persistence = {
-		let result = Persistence(inMemory: true)
-		let viewContext = result.container.viewContext
-		
-		for _ in 0..<10 {
-			let newItem = Item(context: viewContext)
-			newItem.timestamp = Date()
-		}
-		
-		do {
-			try viewContext.save()
-		} catch {
-			print(error)
-		}
-		
-		return result
-	}()
+	static let preview = Persistence(inMemory: true)
 	
 	let container: NSPersistentContainer
 	
