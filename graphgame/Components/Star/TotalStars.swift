@@ -15,9 +15,9 @@ struct TotalStars: View {
 	var body: some View {
 		HStack(spacing: 4) {
 			Text(stars.description)
-			Image(systemName: "star.circle.fill")
+				.foregroundColor(.init("Gold"))
+			Star(unlocked: true)
 		}
-		.foregroundColor(.init("Gold"))
 	}
 }
 
