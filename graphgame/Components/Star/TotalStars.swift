@@ -3,12 +3,12 @@ import CoreData
 
 struct TotalStars: View {
 	@Environment(\.managedObjectContext)
-	var context
+	private var context
 	
 	@FetchRequest<Solution>(sortDescriptors: [])
-	var solutions
+	private var solutions
 	
-	var stars: Int16 {
+	private var stars: Int16 {
 		solutions.reduce(0) { $0 + $1.stars }
 	}
 	
@@ -17,6 +17,7 @@ struct TotalStars: View {
 			Text(stars.description)
 			Image(systemName: "star.circle.fill")
 		}
+		.foregroundColor(.init("Gold"))
 	}
 }
 

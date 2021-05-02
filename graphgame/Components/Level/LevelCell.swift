@@ -1,10 +1,22 @@
 import SwiftUI
 
 struct LevelCell: View {
-	let level: Level
+	@Environment(\.managedObjectContext)
+	private var context
+	
+	private let level: Level
+	
+	init(level: Level) {
+		self.level = level
+	}
+	
+	private var destination: some View {
+		LevelView(level: level)
+			.environment(\.managedObjectContext, context)
+	}
 	
 	var body: some View {
-		NavigationLink(destination: LevelView(level: level)) {
+		NavigationLink(destination: destination) {
 			ZStack {
 				RoundedRectangle(cornerRadius: 15)
 					.stroke(Color("Border"))

@@ -1,10 +1,37 @@
 import SwiftUI
+import CoreData
 
 struct LevelView: View {
-	let level: Level
+	@Environment(\.managedObjectContext)
+	private var context
+	
+	@FetchRequest
+	private var solutions: FetchedResults<Solution>
+	
+	private let level: Level
+	
+	var solution: Solution? {
+		solutions.count > 0 ? solutions[0] : nil
+	}
+	
+	init(level: Level) {
+		_solutions = .init(
+			sortDescriptors: [],
+			predicate: .init(format: "level = %i", level.id)
+		)
+		
+		self.level = level
+	}
 	
 	var body: some View {
-		Text("level \(level.id)")
+		Button {
+			Solution(context: context, level: level, stars: 2)
+			context.saveIfChanged()
+		} label: {
+			Text("2 stars")
+		}
+		.navigationBarTitle("level \(level.id)", displayMode: .inline)
+		.navigationBarItems(trailing: Stars(solution: solution))
 	}
 }
 
