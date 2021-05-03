@@ -10,6 +10,9 @@ struct LevelView: View {
 	@State
 	private var frozenNodes = Set<Node>()
 	
+	@State
+	private var submission: Submission?
+	
 	private var solution: Solution? {
 		solutions.count > 0 ? solutions[0] : nil
 	}
@@ -23,26 +26,23 @@ struct LevelView: View {
 		)
 	}
 	
+	private func submit() {
+		submission = .init(level: level, frozenNodes: frozenNodes)
+	}
+	
 	var body: some View {
 		VStack {
 			Spacer()
 			GraphLayout(graph: level.graph, frozenNodes: $frozenNodes)
 			Spacer()
-			Button {
-				print("Submit")
-			} label: {
-				Text("Submit")
-					.bold()
-					.frame(maxWidth: .infinity)
-					.frame(height: 60)
-					.foregroundColor(.white)
-					.background(Color("Blue"))
-					.cornerRadius(15)
-			}
+			SubmitButton(action: submit)
 		}
 		.navigationBarTitle("level \(level.id)", displayMode: .inline)
 		.navigationBarItems(trailing: Stars(stars: solution?.stars ?? 0))
 		.padding()
+		.sheet(item: $submission) { submission in
+			SubmissionView(submission: submission)
+		}
 	}
 }
 

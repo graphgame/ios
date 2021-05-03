@@ -19,6 +19,9 @@
 		4D576AB7263D301D00E4D982 /* graphgame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D576AB5263D301D00E4D982 /* graphgame.xcdatamodeld */; };
 		4D576AC2263D301D00E4D982 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D576AC1263D301D00E4D982 /* Tests.swift */; };
 		4D576ACD263D301D00E4D982 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D576ACC263D301D00E4D982 /* UITests.swift */; };
+		4DAEFB9F2640817200E2304B /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEFB9E2640817200E2304B /* SubmitButton.swift */; };
+		4DAEFBA72640832200E2304B /* SubmissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEFBA62640832200E2304B /* SubmissionView.swift */; };
+		4DAEFBAD264083E500E2304B /* Submission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEFBAC264083E500E2304B /* Submission.swift */; };
 		4DB8EABD263FDD8700F0115B /* Clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8EABC263FDD8700F0115B /* Clamp.swift */; };
 		4DBCA2E2263D3ABB0013B62B /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBCA2E1263D3ABB0013B62B /* Level.swift */; };
 		4DBCA2EA263D3B140013B62B /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBCA2E9263D3B140013B62B /* Levels.swift */; };
@@ -77,6 +80,9 @@
 		4D576ACC263D301D00E4D982 /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
 		4D576ACE263D301D00E4D982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D576AE0263D304000E4D982 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4DAEFB9E2640817200E2304B /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
+		4DAEFBA62640832200E2304B /* SubmissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionView.swift; sourceTree = "<group>"; };
+		4DAEFBAC264083E500E2304B /* Submission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submission.swift; sourceTree = "<group>"; };
 		4DB8EABC263FDD8700F0115B /* Clamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clamp.swift; sourceTree = "<group>"; };
 		4DBCA2E1263D3ABB0013B62B /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		4DBCA2E9263D3B140013B62B /* Levels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
@@ -202,6 +208,22 @@
 			path = graphgameUITests;
 			sourceTree = "<group>";
 		};
+		4DAEFB9D2640814F00E2304B /* Submit */ = {
+			isa = PBXGroup;
+			children = (
+				4DAEFB9E2640817200E2304B /* SubmitButton.swift */,
+			);
+			path = Submit;
+			sourceTree = "<group>";
+		};
+		4DAEFBAB264083D900E2304B /* Submission */ = {
+			isa = PBXGroup;
+			children = (
+				4DAEFBAC264083E500E2304B /* Submission.swift */,
+			);
+			path = Submission;
+			sourceTree = "<group>";
+		};
 		4DB8EABB263FDD8000F0115B /* Global */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +237,7 @@
 			children = (
 				4D576AAC263D301C00E4D982 /* HomeView.swift */,
 				4DBCA30E263D41C70013B62B /* LevelView.swift */,
+				4DAEFBA62640832200E2304B /* SubmissionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +248,7 @@
 				4DBCA2EE263D3B3E0013B62B /* Level */,
 				4DD9C985263F766C006BE941 /* Graph */,
 				4DC6ED27263E414000614EC8 /* Star */,
+				4DAEFB9D2640814F00E2304B /* Submit */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -236,6 +260,7 @@
 				4D42184B263E80F300238AEC /* NSManagedObjectContext */,
 				4DC2C503263FADC500E1B257 /* CGPoint */,
 				4DBCA2E0263D3AB10013B62B /* Level */,
+				4DAEFBAB264083D900E2304B /* Submission */,
 				4D421842263E804F00238AEC /* Solution */,
 				4DD9C956263F53DA006BE941 /* Graph */,
 			);
@@ -464,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DD9C987263F768C006BE941 /* GraphLayout.swift in Sources */,
+				4DAEFBAD264083E500E2304B /* Submission.swift in Sources */,
 				4D42184D263E810400238AEC /* NSManagedObjectContext+Save.swift in Sources */,
 				4DBCA2EA263D3B140013B62B /* Levels.swift in Sources */,
 				4DBCA2F0263D3B750013B62B /* LevelGrid.swift in Sources */,
@@ -473,8 +499,10 @@
 				4DD9C981263F73D9006BE941 /* Graph+Component.swift in Sources */,
 				4D576AAD263D301C00E4D982 /* HomeView.swift in Sources */,
 				4DD9C99B263FA5CD006BE941 /* Edge+Raw.swift in Sources */,
+				4DAEFBA72640832200E2304B /* SubmissionView.swift in Sources */,
 				4D421844263E805C00238AEC /* Solution.swift in Sources */,
 				4DBCA30F263D41C70013B62B /* LevelView.swift in Sources */,
+				4DAEFB9F2640817200E2304B /* SubmitButton.swift in Sources */,
 				4DD9C990263F7B56006BE941 /* NodeBubble.swift in Sources */,
 				4D576AB7263D301D00E4D982 /* graphgame.xcdatamodeld in Sources */,
 				4DC2C50F263FB0E100E1B257 /* Edges.swift in Sources */,
