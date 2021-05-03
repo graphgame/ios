@@ -3,7 +3,7 @@ import SwiftUI
 struct NodeBubble: View {
 	private let node: Node
 	
-	@Binding var frozen: Bool
+	@Binding private var frozen: Bool
 	
 	init(node: Node, frozen: Binding<Bool>) {
 		self.node = node

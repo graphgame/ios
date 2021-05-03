@@ -27,8 +27,8 @@ struct GraphLayout: View {
 						get: {
 							frozenNodes.contains(node)
 						},
-						set: {
-							if $0 {
+						set: { frozen in
+							if frozen {
 								frozenNodes.insert(node)
 							} else {
 								frozenNodes.remove(node)
