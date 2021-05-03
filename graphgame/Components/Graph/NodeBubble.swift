@@ -18,8 +18,8 @@ struct NodeBubble: View {
 		Button(action: toggle) {
 			ZStack {
 				Circle()
-					.fill(frozen ? Color("Blue") : Color.white)
-					.overlay(Circle().stroke(Color(frozen ? "Blue" : "Border")))
+					.stroke(Color(frozen ? "Blue" : "Border"))
+					.background(Circle().fill(frozen ? Color("Blue") : Color.white))
 					.frame(width: Node.size.width, height: Node.size.height)
 				Text(node.id)
 					.bold()
