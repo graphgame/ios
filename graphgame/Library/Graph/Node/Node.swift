@@ -6,6 +6,9 @@ final class Node: GraphComponent, Identifiable, Hashable {
 	let id: String
 	let position: CGPoint
 	
+	var x: Bool { id == "x" }
+	var y: Bool { id == "y" }
+	
 	init(_ id: String, at position: CGPoint) {
 		if
 			position.x < 0 ||
