@@ -1,15 +1,18 @@
-final class Edge: GraphComponent {
-	let from: String
-	let to: String
+final class Edge: Hashable {
+	let from: Node
+	let to: Node
 	
-	init(from: String, to: String) {
+	init(from: Node, to: Node) {
 		self.from = from
 		self.to = to
 	}
-}
-
-infix operator -->
-
-func --> (from: String, to: String) -> Edge {
-	.init(from: from, to: to)
+	
+	static func == (a: Edge, b: Edge) -> Bool {
+		a.from == b.from && a.to == b.to
+	}
+	
+	func hash(into hasher: inout Hasher) {
+		hasher.combine(from)
+		hasher.combine(to)
+	}
 }

@@ -6,9 +6,7 @@ final class Node: GraphComponent, Identifiable, Hashable {
 	let id: String
 	let position: CGPoint
 	
-	var children = [Node]()
-	
-	init(id: String, position: CGPoint) {
+	init(_ id: String, at position: CGPoint) {
 		if
 			position.x < 0 ||
 			position.y < 0 ||
@@ -34,5 +32,5 @@ final class Node: GraphComponent, Identifiable, Hashable {
 infix operator --
 
 func -- (id: String, position: (x: CGFloat, y: CGFloat)) -> Node {
-	.init(id: id, position: .init(x: position.x, y: position.y))
+	.init(id, at: .init(x: position.x, y: position.y))
 }

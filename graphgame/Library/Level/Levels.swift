@@ -1,20 +1,23 @@
 let levels: [Level] = [
-	.init(id: 1) {
+	.init(1) {
 		"a" -- (10, 10)
-		"b" -- (30, 30)
+		"b" -- (50, 10)
+		"c" -- (10, 50)
 		
 		"a" --> "b"
+		"a" --> "c"
+		"b" --> "c"
 	},
-	.init(id: 2) {
+	.init(2) {
 		
 	},
-	.init(id: 3) {
+	.init(3) {
 		
 	},
-	.init(id: 4) {
+	.init(4) {
 		
 	},
-	.init(id: 5) {
+	.init(5) {
 		
 	}
 ]

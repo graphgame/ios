@@ -1,10 +1,10 @@
 import SwiftUI
 
 struct LevelCell: View {
+	private let level: Level
+	
 	@Environment(\.managedObjectContext)
 	private var context
-	
-	private let level: Level
 	
 	init(level: Level) {
 		self.level = level
