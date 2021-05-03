@@ -1,9 +1,11 @@
 final class Level: Identifiable {
 	let id: Int16
-	let graph: Graph
 	
-	init(_ id: Int16, @Graph.Builder graph: () -> Graph) {
+	private let graphBuilder: () -> Graph
+	lazy var graph = graphBuilder()
+	
+	init(_ id: Int16, @Graph.Builder graph: @escaping () -> Graph) {
 		self.id = id
-		self.graph = graph()
+		graphBuilder = graph
 	}
 }

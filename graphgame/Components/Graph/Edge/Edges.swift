@@ -1,5 +1,8 @@
 import SwiftUI
 
+private let arrowAngle = CGFloat(Angle(degrees: 30).radians)
+private let arrowLength: CGFloat = 15
+
 struct Edges: View {
 	private let graph: Graph
 	
@@ -26,8 +29,20 @@ struct Edges: View {
 		let direction: CGFloat = to.x < from.x ? -1 : 1
 		let offset = .init(x: cos(angle), y: sin(angle)) * direction * Node.radius
 		
-		path.move(to: from + offset)
-		path.addLine(to: to - offset)
+		let fromEdge = from + offset
+		let toEdge = to - offset
+		
+		path.move(to: fromEdge)
+		path.addLine(to: toEdge)
+		
+		let wingOffsetA = .init(x: cos(angle + arrowAngle), y: sin(angle + arrowAngle)) * direction * arrowLength
+		let wingOffsetB = .init(x: cos(angle - arrowAngle), y: sin(angle - arrowAngle)) * direction * arrowLength
+		
+		path.move(to: toEdge)
+		path.addLine(to: toEdge - wingOffsetA)
+		
+		path.move(to: toEdge)
+		path.addLine(to: toEdge - wingOffsetB)
 	}
 	
 	var body: some View {
@@ -37,7 +52,7 @@ struct Edges: View {
 					draw(edge, on: &path, in: geometry)
 				}
 			}
-			.stroke()
+			.stroke(lineWidth: 2)
 		}
 	}
 }
