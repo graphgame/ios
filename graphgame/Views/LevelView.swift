@@ -43,7 +43,10 @@ struct LevelView: View {
 			Spacer()
 			GraphLayout(graph: level.graph, frozenNodes: $frozenNodes)
 			Spacer()
-			SubmitButton(action: submit)
+			PrimaryButton(action: submit) {
+				Text("Submit")
+					.bold()
+			}
 		}
 		.navigationBarTitle("level \(level.id)", displayMode: .inline)
 		.navigationBarItems(trailing: Stars(stars: solution?.stars ?? 0))
