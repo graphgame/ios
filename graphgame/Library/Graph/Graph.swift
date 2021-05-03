@@ -1,4 +1,8 @@
+import CoreGraphics
+
 final class Graph {
+	static let size = CGSize(width: 100, height: 100)
+	
 	let nodes: [Node]
 	
 	init(components: [GraphComponent]) {

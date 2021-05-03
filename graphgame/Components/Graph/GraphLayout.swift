@@ -1,18 +1,43 @@
 import SwiftUI
 
 struct GraphLayout: View {
-	@Environment(\.managedObjectContext)
-	private var context
-	
 	private let graph: Graph
+	
+	@State var frozenNodes = Set<Node>()
 	
 	init(graph: Graph) {
 		self.graph = graph
 	}
 	
+	private func position(of node: Node, in geometry: GeometryProxy) -> CGPoint {
+		let dimension = min(geometry.size.width, geometry.size.height)
+		
+		return .init(
+			x: node.position.x * dimension / Graph.size.width,
+			y: node.position.y * dimension / Graph.size.height
+		)
+	}
+	
 	var body: some View {
-		ForEach(graph.nodes) { node in
-			Text(node.id)
+		GeometryReader { geometry in
+			ForEach(graph.nodes) { node in
+				NodeBubble(
+					node: node,
+					frozen: .init(
+						get: {
+							frozenNodes.contains(node)
+						},
+						set: {
+							if $0 {
+								frozenNodes.insert(node)
+							} else {
+								frozenNodes.remove(node)
+							}
+						}
+					)
+				)
+				.position(position(of: node, in: geometry))
+			}
 		}
 	}
 }

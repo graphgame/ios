@@ -22,7 +22,7 @@ struct LevelCell: View {
 					.stroke(Color("Border"))
 					.aspectRatio(contentMode: .fill)
 				Text("level \(level.id)")
-					.font(.system(size: 16, weight: .bold))
+					.bold()
 					.foregroundColor(.black)
 			}
 		}

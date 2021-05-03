@@ -31,6 +31,7 @@
 		4DD9C973263F6DA9006BE941 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9C972263F6DA9006BE941 /* Node.swift */; };
 		4DD9C981263F73D9006BE941 /* Graph+Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9C980263F73D9006BE941 /* Graph+Component.swift */; };
 		4DD9C987263F768C006BE941 /* GraphLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9C986263F768C006BE941 /* GraphLayout.swift */; };
+		4DD9C990263F7B56006BE941 /* NodeBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9C98F263F7B56006BE941 /* NodeBubble.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		4DD9C972263F6DA9006BE941 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		4DD9C980263F73D9006BE941 /* Graph+Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Graph+Component.swift"; sourceTree = "<group>"; };
 		4DD9C986263F768C006BE941 /* GraphLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphLayout.swift; sourceTree = "<group>"; };
+		4DD9C98F263F7B56006BE941 /* NodeBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeBubble.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				4DD9C986263F768C006BE941 /* GraphLayout.swift */,
+				4DD9C98F263F7B56006BE941 /* NodeBubble.swift */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				4D576AAD263D301C00E4D982 /* HomeView.swift in Sources */,
 				4D421844263E805C00238AEC /* Solution.swift in Sources */,
 				4DBCA30F263D41C70013B62B /* LevelView.swift in Sources */,
+				4DD9C990263F7B56006BE941 /* NodeBubble.swift in Sources */,
 				4D576AB7263D301D00E4D982 /* graphgame.xcdatamodeld in Sources */,
 				4DD9C958263F65DD006BE941 /* Graph.swift in Sources */,
 				4DD9C960263F6A8D006BE941 /* Edge.swift in Sources */,
