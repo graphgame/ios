@@ -24,14 +24,9 @@ struct LevelView: View {
 	}
 	
 	var body: some View {
-		Button {
-			Solution(context: context, level: level, stars: 2)
-			context.saveIfChanged()
-		} label: {
-			Text("2 stars")
-		}
-		.navigationBarTitle("level \(level.id)", displayMode: .inline)
-		.navigationBarItems(trailing: Stars(solution: solution))
+		GraphLayout(graph: level.graph)
+			.navigationBarTitle("level \(level.id)", displayMode: .inline)
+			.navigationBarItems(trailing: Stars(stars: solution?.stars ?? 0))
 	}
 }
 

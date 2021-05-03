@@ -1,7 +1,9 @@
 final class Graph {
-	private(set) var nodes = [String: Node]()
+	let nodes: [Node]
 	
 	init(components: [GraphComponent]) {
+		var nodes = [String: Node]()
+		
 		for component in components {
 			if let node = component as? Node {
 				nodes[node.id] = node
@@ -19,5 +21,7 @@ final class Graph {
 				fatalError("Unknown graph component")
 			}
 		}
+		
+		self.nodes = .init(nodes.values)
 	}
 }

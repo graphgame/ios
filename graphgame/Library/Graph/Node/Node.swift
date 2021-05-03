@@ -1,6 +1,6 @@
 import CoreGraphics
 
-final class Node: GraphComponent {
+final class Node: GraphComponent, Identifiable {
 	let id: String
 	let position: CGPoint
 	

@@ -2,14 +2,10 @@ import SwiftUI
 import CoreData
 
 struct Stars: View {
-	private let solution: Solution?
+	private let stars: Int16
 	
-	private var stars: Int16 {
-		solution?.stars ?? 0
-	}
-	
-	init(solution: Solution?) {
-		self.solution = solution
+	init(stars: Int16) {
+		self.stars = stars
 	}
 	
 	var body: some View {
@@ -22,14 +18,8 @@ struct Stars: View {
 }
 
 struct Stars_Previews: PreviewProvider {
-	private static let solution = Solution(
-		context: Persistence.preview.context,
-		level: levels[0],
-		stars: 2
-	)
-	
 	static var previews: some View {
-		Stars(solution: solution)
+		Stars(stars: 2)
 			.environment(\.managedObjectContext, Persistence.preview.context)
 	}
 }
