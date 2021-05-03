@@ -1,7 +1,7 @@
 import CoreGraphics
 
 final class Node: GraphComponent, Identifiable, Hashable {
-	static let size = CGSize(width: 60, height: 60)
+	static let radius: CGFloat = 30
 	
 	let id: String
 	let position: CGPoint

@@ -20,7 +20,7 @@ struct NodeBubble: View {
 				Circle()
 					.stroke(Color(frozen ? "Blue" : "Border"))
 					.background(Circle().fill(frozen ? Color("Blue") : Color.white))
-					.frame(width: Node.size.width, height: Node.size.height)
+					.frame(width: Node.radius * 2, height: Node.radius * 2)
 				Text(node.id)
 					.bold()
 					.foregroundColor(frozen ? .white : .black)

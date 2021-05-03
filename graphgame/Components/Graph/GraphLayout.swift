@@ -3,7 +3,7 @@ import SwiftUI
 struct GraphLayout: View {
 	private let graph: Graph
 	
-	@State var frozenNodes = Set<Node>()
+	@State private var frozenNodes = Set<Node>()
 	
 	init(graph: Graph) {
 		self.graph = graph
