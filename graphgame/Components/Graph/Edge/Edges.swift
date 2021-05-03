@@ -10,18 +10,9 @@ struct Edges: View {
 		self.graph = graph
 	}
 	
-	private func position(of node: Node, in geometry: GeometryProxy) -> CGPoint {
-		let dimension = min(geometry.size.width, geometry.size.height)
-		
-		return .init(
-			x: node.position.x * dimension / Graph.size.width,
-			y: node.position.y * dimension / Graph.size.height
-		)
-	}
-	
 	private func draw(_ edge: Edge, on path: inout Path, in geometry: GeometryProxy) {
-		let from = position(of: edge.from, in: geometry)
-		let to = position(of: edge.to, in: geometry)
+		let from = edge.from.position(in: geometry)
+		let to = edge.to.position(in: geometry)
 		
 		let slope = (to.y - from.y) / (to.x - from.x)
 		let angle = atan(slope)

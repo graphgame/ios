@@ -19,6 +19,7 @@
 		4D576AB7263D301D00E4D982 /* graphgame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D576AB5263D301D00E4D982 /* graphgame.xcdatamodeld */; };
 		4D576AC2263D301D00E4D982 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D576AC1263D301D00E4D982 /* Tests.swift */; };
 		4D576ACD263D301D00E4D982 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D576ACC263D301D00E4D982 /* UITests.swift */; };
+		4DB8EABD263FDD8700F0115B /* Clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8EABC263FDD8700F0115B /* Clamp.swift */; };
 		4DBCA2E2263D3ABB0013B62B /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBCA2E1263D3ABB0013B62B /* Level.swift */; };
 		4DBCA2EA263D3B140013B62B /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBCA2E9263D3B140013B62B /* Levels.swift */; };
 		4DBCA2F0263D3B750013B62B /* LevelGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBCA2EF263D3B750013B62B /* LevelGrid.swift */; };
@@ -76,6 +77,7 @@
 		4D576ACC263D301D00E4D982 /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
 		4D576ACE263D301D00E4D982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D576AE0263D304000E4D982 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4DB8EABC263FDD8700F0115B /* Clamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clamp.swift; sourceTree = "<group>"; };
 		4DBCA2E1263D3ABB0013B62B /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		4DBCA2E9263D3B140013B62B /* Levels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
 		4DBCA2EF263D3B750013B62B /* LevelGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelGrid.swift; sourceTree = "<group>"; };
@@ -200,6 +202,14 @@
 			path = graphgameUITests;
 			sourceTree = "<group>";
 		};
+		4DB8EABB263FDD8000F0115B /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				4DB8EABC263FDD8700F0115B /* Clamp.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
 		4DBCA2DD263D3A4B0013B62B /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +232,7 @@
 		4DBCA2DF263D3A960013B62B /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				4DB8EABB263FDD8000F0115B /* Global */,
 				4D42184B263E80F300238AEC /* NSManagedObjectContext */,
 				4DC2C503263FADC500E1B257 /* CGPoint */,
 				4DBCA2E0263D3AB10013B62B /* Level */,
@@ -477,6 +488,7 @@
 				4DBCA301263D3DA20013B62B /* LevelCell.swift in Sources */,
 				4DBCA2E2263D3ABB0013B62B /* Level.swift in Sources */,
 				4D576AAB263D301C00E4D982 /* App.swift in Sources */,
+				4DB8EABD263FDD8700F0115B /* Clamp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

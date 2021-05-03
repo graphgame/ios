@@ -1,4 +1,4 @@
-import CoreGraphics
+import SwiftUI
 
 final class Node: GraphComponent, Identifiable, Hashable {
 	static let radius: CGFloat = 30
@@ -32,6 +32,15 @@ final class Node: GraphComponent, Identifiable, Hashable {
 	
 	func hash(into hasher: inout Hasher) {
 		hasher.combine(id)
+	}
+	
+	func position(in geometry: GeometryProxy) -> CGPoint {
+		let dimension = min(geometry.size.width, geometry.size.height)
+		
+		return .init(
+			x: clamp(Self.radius, position.x * dimension / Graph.size.width, dimension - Self.radius),
+			y: clamp(Self.radius, position.y * dimension / Graph.size.height, dimension - Self.radius)
+		)
 	}
 }
 

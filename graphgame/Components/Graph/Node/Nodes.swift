@@ -11,15 +11,6 @@ struct Nodes: View {
 		_frozenNodes = frozenNodes
 	}
 	
-	private func position(of node: Node, in geometry: GeometryProxy) -> CGPoint {
-		let dimension = min(geometry.size.width, geometry.size.height)
-		
-		return .init(
-			x: node.position.x * dimension / Graph.size.width,
-			y: node.position.y * dimension / Graph.size.height
-		)
-	}
-	
 	var body: some View {
 		GeometryReader { geometry in
 			ForEach(graph.nodes) { node in
@@ -38,7 +29,7 @@ struct Nodes: View {
 						}
 					)
 				)
-				.position(position(of: node, in: geometry))
+				.position(node.position(in: geometry))
 			}
 		}
 	}

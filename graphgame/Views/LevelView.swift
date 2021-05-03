@@ -24,9 +24,25 @@ struct LevelView: View {
 	}
 	
 	var body: some View {
-		GraphLayout(graph: level.graph, frozenNodes: $frozenNodes)
-			.navigationBarTitle("level \(level.id)", displayMode: .inline)
-			.navigationBarItems(trailing: Stars(stars: solution?.stars ?? 0))
+		VStack {
+			Spacer()
+			GraphLayout(graph: level.graph, frozenNodes: $frozenNodes)
+			Spacer()
+			Button {
+				print("Submit")
+			} label: {
+				Text("Submit")
+					.bold()
+					.frame(maxWidth: .infinity)
+					.frame(height: 60)
+					.foregroundColor(.white)
+					.background(Color("Blue"))
+					.cornerRadius(15)
+			}
+		}
+		.navigationBarTitle("level \(level.id)", displayMode: .inline)
+		.navigationBarItems(trailing: Stars(stars: solution?.stars ?? 0))
+		.padding()
 	}
 }
 
