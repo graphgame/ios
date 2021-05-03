@@ -4,6 +4,9 @@ import CoreData
 struct LevelView: View {
 	private let level: Level
 	
+	@Environment(\.managedObjectContext)
+	var context
+	
 	@FetchRequest
 	private var solutions: FetchedResults<Solution>
 	
@@ -30,6 +33,11 @@ struct LevelView: View {
 		submission = .init(level: level, frozenNodes: frozenNodes)
 	}
 	
+	private func destination(submission: Submission) -> some View {
+		SubmissionView(submission: submission)
+			.environment(\.managedObjectContext, context)
+	}
+	
 	var body: some View {
 		VStack {
 			Spacer()
@@ -40,9 +48,7 @@ struct LevelView: View {
 		.navigationBarTitle("level \(level.id)", displayMode: .inline)
 		.navigationBarItems(trailing: Stars(stars: solution?.stars ?? 0))
 		.padding()
-		.sheet(item: $submission) { submission in
-			SubmissionView(submission: submission)
-		}
+		.sheet(item: $submission, content: destination)
 	}
 }
 
