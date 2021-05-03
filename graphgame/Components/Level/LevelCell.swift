@@ -6,8 +6,20 @@ struct LevelCell: View {
 	@Environment(\.managedObjectContext)
 	private var context
 	
+	@FetchRequest
+	private var solutions: FetchedResults<Solution>
+	
+	private var solution: Solution? {
+		solutions.count > 0 ? solutions[0] : nil
+	}
+	
 	init(level: Level) {
 		self.level = level
+		
+		_solutions = .init(
+			sortDescriptors: [],
+			predicate: .init(format: "level = %i", level.id)
+		)
 	}
 	
 	private var destination: some View {
@@ -24,6 +36,8 @@ struct LevelCell: View {
 				Text("level \(level.id)")
 					.bold()
 					.foregroundColor(.black)
+				Stars(stars: solution?.stars ?? 0)
+					.offset(y: 25)
 			}
 		}
 	}

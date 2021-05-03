@@ -2,9 +2,6 @@ import SwiftUI
 import CoreData
 
 struct TotalStars: View {
-	@Environment(\.managedObjectContext)
-	private var context
-	
 	@FetchRequest<Solution>(sortDescriptors: [])
 	private var solutions
 	

@@ -4,9 +4,6 @@ import CoreData
 struct LevelView: View {
 	private let level: Level
 	
-	@Environment(\.managedObjectContext)
-	private var context
-	
 	@FetchRequest
 	private var solutions: FetchedResults<Solution>
 	
@@ -18,12 +15,12 @@ struct LevelView: View {
 	}
 	
 	init(level: Level) {
+		self.level = level
+		
 		_solutions = .init(
 			sortDescriptors: [],
 			predicate: .init(format: "level = %i", level.id)
 		)
-		
-		self.level = level
 	}
 	
 	var body: some View {
