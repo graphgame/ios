@@ -15,11 +15,7 @@ struct LevelCell: View {
 	
 	init(level: Level) {
 		self.level = level
-		
-		_solutions = .init(
-			sortDescriptors: [],
-			predicate: .init(format: "level = %i", level.id)
-		)
+		_solutions = Solution.for(level: level)
 	}
 	
 	private var destination: some View {

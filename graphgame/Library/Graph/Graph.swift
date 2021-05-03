@@ -24,11 +24,9 @@ final class Graph {
 				
 				let edge = Edge(from: from, to: to)
 				
-				if edges.contains(edge) {
+				if !edges.insert(edge).inserted {
 					fatalError("Duplicate edge \"\(edge.from.id)\" --> \"\(edge.to.id)\"")
 				}
-				
-				edges.insert(edge)
 			} else {
 				fatalError("Unknown graph component")
 			}

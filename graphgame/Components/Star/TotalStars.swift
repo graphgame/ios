@@ -2,11 +2,20 @@ import SwiftUI
 import CoreData
 
 struct TotalStars: View {
-	@FetchRequest<Solution>(sortDescriptors: [])
+	@FetchRequest<Solution>(
+		sortDescriptors: [.init(keyPath: \Solution.stars, ascending: false)],
+		predicate: .init(format: "stars > 0")
+	)
 	private var solutions
 	
 	private var stars: Int16 {
-		solutions.reduce(0) { $0 + $1.stars }
+		var levels = Set<Int16>()
+		
+		return solutions.reduce(0) { stars, solution in
+			levels.insert(solution.level).inserted
+				? stars + solution.stars
+				: stars
+		}
 	}
 	
 	var body: some View {

@@ -1,7 +1,11 @@
+import Foundation
+
 final class Submission: Identifiable {
 	var id: Int16 { level.id }
 	
 	let level: Level
+	let date = Date()
+	
 	let frozenNodes: Set<Node>
 	
 	private(set) lazy var stars = {

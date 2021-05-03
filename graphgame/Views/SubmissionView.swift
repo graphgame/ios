@@ -4,6 +4,9 @@ import CoreData
 struct SubmissionView: View {
 	private let submission: Submission
 	
+	@Environment(\.managedObjectContext)
+	var context
+	
 	@Environment(\.presentationMode)
 	var presentationMode
 	
@@ -20,11 +23,11 @@ struct SubmissionView: View {
 	
 	init(submission: Submission) {
 		self.submission = submission
-		
-		_solutions = .init(
-			sortDescriptors: [],
-			predicate: .init(format: "level = %i", submission.level.id)
-		)
+		_solutions = Solution.for(level: submission.level)
+	}
+	
+	private func save() {
+		Solution.save(in: context, submission: submission)
 	}
 	
 	private func retry() {
@@ -74,6 +77,7 @@ struct SubmissionView: View {
 			}
 		}
 		.padding()
+		.onAppear(perform: save)
 	}
 }
 
