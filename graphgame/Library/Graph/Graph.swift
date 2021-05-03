@@ -34,6 +34,14 @@ final class Graph {
 			}
 		}
 		
+		if nodes[Node.x] == nil {
+			fatalError("Missing starting node")
+		}
+		
+		if nodes[Node.y] == nil {
+			fatalError("Missing ending node")
+		}
+		
 		self.nodes = .init(nodes.values)
 		self.edges = .init(edges)
 	}

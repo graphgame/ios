@@ -13,7 +13,7 @@ struct LevelView: View {
 	@State
 	private var frozenNodes = Set<Node>()
 	
-	var solution: Solution? {
+	private var solution: Solution? {
 		solutions.count > 0 ? solutions[0] : nil
 	}
 	

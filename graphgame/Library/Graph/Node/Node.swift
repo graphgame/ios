@@ -3,11 +3,14 @@ import CoreGraphics
 final class Node: GraphComponent, Identifiable, Hashable {
 	static let radius: CGFloat = 30
 	
+	static let x = "x"
+	static let y = "y"
+	
 	let id: String
 	let position: CGPoint
 	
-	var x: Bool { id == "x" }
-	var y: Bool { id == "y" }
+	var x: Bool { id == Self.x }
+	var y: Bool { id == Self.y }
 	
 	init(_ id: String, at position: CGPoint) {
 		if
