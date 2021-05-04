@@ -8,6 +8,7 @@ extension Solution {
 		
 		solution.level = submission.level.id
 		solution.stars = stars
+		solution.frozenNodes = submission.frozenNodes.map(\.id)
 		solution.date = submission.date
 		
 		context.saveIfChanged()

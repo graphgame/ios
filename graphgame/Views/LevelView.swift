@@ -25,6 +25,12 @@ struct LevelView: View {
 		_solutions = Solution.for(level: level)
 	}
 	
+	private func loadFrozenNodes() {
+		frozenNodes = .init(
+			solution?.frozenNodes?.compactMap { level.graph[$0] } ?? []
+		)
+	}
+	
 	private func submit() {
 		submission = .init(level: level, frozenNodes: frozenNodes)
 	}
@@ -48,6 +54,7 @@ struct LevelView: View {
 		.navigationBarItems(trailing: Stars(stars: solution?.stars ?? 0))
 		.padding()
 		.sheet(item: $submission, content: destination)
+		.onAppear(perform: loadFrozenNodes)
 	}
 }
 

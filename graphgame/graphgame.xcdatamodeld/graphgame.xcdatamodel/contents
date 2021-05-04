@@ -2,10 +2,11 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20F5046g" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Solution" representedClassName="Solution" syncable="YES" codeGenerationType="class">
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="frozenNodes" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
         <attribute name="level" attributeType="Integer 16" usesScalarValueType="YES"/>
         <attribute name="stars" attributeType="Integer 16" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Solution" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="Solution" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>

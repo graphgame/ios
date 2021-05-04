@@ -6,6 +6,8 @@ final class Graph {
 	let nodes: [Node]
 	let edges: [Edge]
 	
+	private let ids: [String: Node]
+	
 	init(with components: [GraphComponent]) {
 		var nodes = [String: Node]()
 		var edges = Set<Edge>()
@@ -42,5 +44,11 @@ final class Graph {
 		
 		self.nodes = .init(nodes.values)
 		self.edges = .init(edges)
+		
+		self.ids = nodes
+	}
+	
+	subscript(_ id: String) -> Node? {
+		ids[id]
 	}
 }
