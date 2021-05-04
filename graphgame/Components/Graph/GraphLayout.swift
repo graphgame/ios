@@ -4,9 +4,9 @@ struct GraphLayout: View {
 	private let graph: Graph
 	
 	@Binding
-	private var frozenNodes: Set<Node>
+	private var frozenNodes: Set<Node>?
 	
-	init(graph: Graph, frozenNodes: Binding<Set<Node>>) {
+	init(graph: Graph, frozenNodes: Binding<Set<Node>?>) {
 		self.graph = graph
 		_frozenNodes = frozenNodes
 	}

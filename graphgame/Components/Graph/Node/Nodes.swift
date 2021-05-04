@@ -4,9 +4,9 @@ struct Nodes: View {
 	private let graph: Graph
 	
 	@Binding
-	private var frozenNodes: Set<Node>
+	private var frozenNodes: Set<Node>?
 	
-	init(graph: Graph, frozenNodes: Binding<Set<Node>>) {
+	init(graph: Graph, frozenNodes: Binding<Set<Node>?>) {
 		self.graph = graph
 		_frozenNodes = frozenNodes
 	}
@@ -18,13 +18,13 @@ struct Nodes: View {
 					node: node,
 					frozen: .init(
 						get: {
-							frozenNodes.contains(node)
+							frozenNodes?.contains(node) ?? false
 						},
 						set: { frozen in
 							if frozen {
-								frozenNodes.insert(node)
+								frozenNodes?.insert(node)
 							} else {
-								frozenNodes.remove(node)
+								frozenNodes?.remove(node)
 							}
 						}
 					)

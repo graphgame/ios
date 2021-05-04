@@ -32,6 +32,8 @@
 		4DC2C505263FADD800E1B257 /* CGPoint+Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2C504263FADD800E1B257 /* CGPoint+Arithmetic.swift */; };
 		4DC2C50F263FB0E100E1B257 /* Edges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2C50E263FB0E100E1B257 /* Edges.swift */; };
 		4DC2C518263FB0EE00E1B257 /* Nodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2C517263FB0EE00E1B257 /* Nodes.swift */; };
+		4DC2D6ED2641EA4200EDED97 /* LevelViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2D6EC2641EA4200EDED97 /* LevelViewContent.swift */; };
+		4DC2D7022641EE9B00EDED97 /* Binding+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2D7012641EE9B00EDED97 /* Binding+Set.swift */; };
 		4DC6ED29263E415000614EC8 /* TotalStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC6ED28263E415000614EC8 /* TotalStars.swift */; };
 		4DD9C958263F65DD006BE941 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9C957263F65DD006BE941 /* Graph.swift */; };
 		4DD9C960263F6A8D006BE941 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD9C95F263F6A8D006BE941 /* Edge.swift */; };
@@ -94,6 +96,8 @@
 		4DC2C504263FADD800E1B257 /* CGPoint+Arithmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Arithmetic.swift"; sourceTree = "<group>"; };
 		4DC2C50E263FB0E100E1B257 /* Edges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edges.swift; sourceTree = "<group>"; };
 		4DC2C517263FB0EE00E1B257 /* Nodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nodes.swift; sourceTree = "<group>"; };
+		4DC2D6EC2641EA4200EDED97 /* LevelViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewContent.swift; sourceTree = "<group>"; };
+		4DC2D7012641EE9B00EDED97 /* Binding+Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Set.swift"; sourceTree = "<group>"; };
 		4DC6ED28263E415000614EC8 /* TotalStars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalStars.swift; sourceTree = "<group>"; };
 		4DD9C957263F65DD006BE941 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		4DD9C95F263F6A8D006BE941 /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
@@ -261,6 +265,7 @@
 			children = (
 				4DB8EABB263FDD8000F0115B /* Global */,
 				4D42184B263E80F300238AEC /* NSManagedObjectContext */,
+				4DC2D7002641EE9000EDED97 /* Binding */,
 				4DC2C503263FADC500E1B257 /* CGPoint */,
 				4DBCA2E0263D3AB10013B62B /* Level */,
 				4DAEFBAB264083D900E2304B /* Submission */,
@@ -284,6 +289,7 @@
 			children = (
 				4DBCA2EF263D3B750013B62B /* LevelGrid.swift */,
 				4DBCA300263D3DA20013B62B /* LevelCell.swift */,
+				4DC2D6EC2641EA4200EDED97 /* LevelViewContent.swift */,
 			);
 			path = Level;
 			sourceTree = "<group>";
@@ -311,6 +317,14 @@
 				4DC2C50E263FB0E100E1B257 /* Edges.swift */,
 			);
 			path = Edge;
+			sourceTree = "<group>";
+		};
+		4DC2D7002641EE9000EDED97 /* Binding */ = {
+			isa = PBXGroup;
+			children = (
+				4DC2D7012641EE9B00EDED97 /* Binding+Set.swift */,
+			);
+			path = Binding;
 			sourceTree = "<group>";
 		};
 		4DC6ED27263E414000614EC8 /* Star */ = {
@@ -506,6 +520,7 @@
 				4D421844263E805C00238AEC /* Solution+Save.swift in Sources */,
 				4DBCA30F263D41C70013B62B /* LevelView.swift in Sources */,
 				4DAEFB9F2640817200E2304B /* PrimaryButton.swift in Sources */,
+				4DC2D6ED2641EA4200EDED97 /* LevelViewContent.swift in Sources */,
 				4D71AD7C2640BD2F00311F26 /* Solution+Level.swift in Sources */,
 				4DD9C990263F7B56006BE941 /* NodeBubble.swift in Sources */,
 				4D576AB7263D301D00E4D982 /* graphgame.xcdatamodeld in Sources */,
@@ -520,6 +535,7 @@
 				4DBCA301263D3DA20013B62B /* LevelCell.swift in Sources */,
 				4DBCA2E2263D3ABB0013B62B /* Level.swift in Sources */,
 				4D576AAB263D301C00E4D982 /* App.swift in Sources */,
+				4DC2D7022641EE9B00EDED97 /* Binding+Set.swift in Sources */,
 				4DB8EABD263FDD8700F0115B /* Clamp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -5,13 +5,16 @@ struct SubmissionView: View {
 	private let submission: Submission
 	
 	@Environment(\.managedObjectContext)
-	var context
+	private var context
 	
 	@Environment(\.presentationMode)
-	var presentationMode
+	private var presentationMode
 	
 	@FetchRequest
 	private var solutions: FetchedResults<Solution>
+	
+	@Binding
+	private var level: Level
 	
 	private var solution: Solution? {
 		solutions.count > 0 ? solutions[0] : nil
@@ -21,9 +24,11 @@ struct SubmissionView: View {
 		submission.stars != nil
 	}
 	
-	init(submission: Submission) {
+	init(level: Binding<Level>, submission: Submission) {
 		self.submission = submission
+		
 		_solutions = Solution.for(level: submission.level)
+		_level = level
 	}
 	
 	private func save() {
@@ -35,7 +40,8 @@ struct SubmissionView: View {
 	}
 	
 	private func next() {
-		print("Next")
+		level = level.next!
+		presentationMode.wrappedValue.dismiss()
 	}
 	
 	private func action(primary: Bool) -> () -> Void {
@@ -84,8 +90,11 @@ struct SubmissionView: View {
 struct SubmissionView_Previews: PreviewProvider {
 	static var previews: some View {
 		NavigationView {
-			SubmissionView(submission: .init(level: levels[0], frozenNodes: .init()))
-				.environment(\.managedObjectContext, Persistence.preview.context)
+			SubmissionView(
+				level: .constant(levels[0]),
+				submission: .init(level: levels[0], frozenNodes: .init())
+			)
+			.environment(\.managedObjectContext, Persistence.preview.context)
 		}
 	}
 }
