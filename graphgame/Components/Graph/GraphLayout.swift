@@ -16,7 +16,7 @@ struct GraphLayout: View {
 			Edges(graph: graph)
 			Nodes(graph: graph, frozenNodes: $frozenNodes)
 		}
-		.aspectRatio(contentMode: .fit)
+		.aspectRatio(Graph.size, contentMode: .fit)
 	}
 }
 
